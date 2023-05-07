@@ -7,6 +7,7 @@ import Constants from 'expo-constants';
 import PantallaInicio from './screens/inicio';
 import PantallaEditar from './screens/editar';
 import PantallaUsuarios from './screens/usuarios';
+import PantallaInsertar from './screens/insertar';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -39,6 +40,8 @@ export default function App() {
             } else if (rn === "Usuarios") {
               iconName = focused ? 'people' : 'people-outline';
 
+            } else if (rn === "Insertar") {
+              iconName = focused ? 'pencil' : 'pencil-outline';
             }
 
             return <Ionicons name={iconName} size={size} color={color} />;
@@ -55,6 +58,11 @@ export default function App() {
           name="Usuarios"
           component={PantallaUsuarios}
           options={{title: "Usuarios"}}
+        />
+        <Tabs.Screen
+          name="Insertar"
+          component={PantallaInsertar}
+          options={{title: "Insertar"}}
         />
         <Tabs.Screen
           name="Editar"
